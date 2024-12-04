@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/master}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Reserva</title>
+</head>
+<body>
+    <div layout:fragment="page-content">
+        <h1>Realiza tu Reserva</h1>
+        <form th:action="@{/reservas/guardar}" method="post" th:object="${reserva}">
+            <div class="input-field">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" required>
+            </div>
+            <div class="input-field">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" th:field="*{fecha}" required>
+            </div>
+            <div class="input-field">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" th:field="*{hora}" required>
+            </div>
+            <div class="input-field">
+                <label for="personas">Número de personas:</label>
+                <input type="number" id="personas" th:field="*{personas}" required>
+            </div>
+            <button type="submit" class="btn">Reservar</button>
+        </form>
+    </div>
+</body>
+</html>

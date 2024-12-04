@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Sabor Gourmet</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/materialize.min.css}"  media="screen,projection"/>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1; /* Hace que el contenido ocupe el espacio restante */
+        }
+
+        footer.page-footer {
+            margin-top: auto; 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Sabor Gourmet</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/reservas">Reservas</a></li>
+                <li><a href="/administradores">Administradores</a></li>
+                <li><a href="/mesas">Mesas Disponibles</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Aquí se llenará el contenido de la página -->
+        <div layout:fragment="page-content">
+
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <p class="center-align">© 2024 Sabor Gourmet - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script type="text/javascript" th:src="@{js/materialize.min.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>

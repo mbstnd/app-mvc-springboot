@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layouts"
+layout:decorate="~{layouts/master}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Sabor Gourmet</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/reservas">Reservas</a></li>
+        <li><a href="/administradores">Administradores</a></li>
+        <li><a href="/mesas">Mesas Disponibles</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div layout:fragment="content">
+
+    </div>
+  </div>
+  <footer class="page-footer">
+    <div class="container">
+      <p class="center-align">© 2024 Sabor Gourmet - Todos los derechos reservados</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mesas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Lista de Mesas</h1>
+            <a href="/mesas/nueva" class="btn btn-primary">Agregar Nueva Mesa</a>
+        </div>
+
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Capacidad</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterar sobre la lista de mesas -->
+                <tr th:each="mesa, iter : ${mesas}">
+                    <td th:text="${iter.count}"></td>
+                    <td th:text="${mesa.capacidad}"></td>
+                    <td th:text="${mesa.estado}"></td>
+                    <td>
+                        <a th:href="@{'/mesas/editar/' + ${mesa.id}}" class="btn btn-warning btn-sm">Editar</a>
+                        <form th:action="@{'/mesas/eliminar/' + ${mesa.id}}" method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar esta mesa?');">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                <!-- Mostrar un mensaje si no hay mesas -->
+                <tr th:if="${#lists.isEmpty(mesas)}">
+                    <td colspan="5" class="text-center">No hay mesas registradas.</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-secondary">Volver al inicio</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
