@@ -16,6 +16,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Mesa</th>
                     <th>Estado</th>
                     <th>Fecha y Hora</th>
                     <th>Acciones</th>
@@ -26,6 +27,7 @@
                 <tr th:each="reserva : ${reservas}">
                     <td th:text="${reserva.id}"></td>
                     <td th:text="${reserva.clienteNombre}"></td>
+                    <td th:text="${reserva.mesa}"></td>
                     <td th:text="${reserva.estado}"></td>
                     <td th:text="${#temporals.format(reserva.fechaHora, 'dd/MM/yyyy HH:mm')}"></td>
             

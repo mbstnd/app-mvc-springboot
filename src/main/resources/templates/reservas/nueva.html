@@ -11,7 +11,9 @@
         <form th:action="@{/reservas/guardar}" method="post" class="mt-4">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre del cliente" required>
+                <input type="text" id="clienteNombre" name="clienteNombre" class="form-control" placeholder="Nombre del cliente" required>
+                <label for="mesa" class="form-label">Mesa</label>
+                <input type="text" id="mesa" name="mesa" class="form-control" placeholder="Mesa por registrar" required>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-success">Guardar Reserva</button>
